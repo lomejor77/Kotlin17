@@ -4,125 +4,123 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="5dp"
     tools:context=".MainActivity">
-
-    <EditText
-        android:id="@+id/editNumber2"
-        android:layout_width="89dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="60dp"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editNumber1"
-        tools:ignore="Autofill,SpeakableTextPresentCheck" />
-
-    <Spinner
-        android:id="@+id/convert1"
-        android:layout_width="167dp"
-        android:layout_height="49dp"
-        android:layout_marginEnd="52dp"
-        android:dropDownSelector="@android:drawable/btn_dropdown"
-        app:layout_constraintBottom_toBottomOf="@+id/editNumber1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/editNumber1"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="DuplicateSpeakableTextCheck" />
-
-    <Spinner
-        android:id="@+id/convert2"
-        android:layout_width="167dp"
-        android:layout_height="49dp"
-        android:layout_marginEnd="52dp"
-        android:dropDownSelector="@android:drawable/arrow_down_float"
-        app:layout_constraintBottom_toBottomOf="@+id/editNumber2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/editNumber2"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <EditText
-        android:id="@+id/editNumber1"
-        android:layout_width="89dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="32dp"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        tools:ignore="Autofill,SpeakableTextPresentCheck" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="169dp"
-        android:layout_height="110dp"
-        android:layout_marginTop="72dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="ContentDescription,ImageContrastCheck"
-        tools:srcCompat="@drawable/sharp_local_atm_24" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="205dp" />
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.25" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="114dp"
-        android:layout_height="59dp"
-        android:layout_marginEnd="68dp"
-        android:layout_marginBottom="232dp"
-        android:text="@string/button1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintHorizontal_bias="1.0"
+    <EditText
+        android:id="@+id/textMonto"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="Monto"
+        android:inputType="number"
+        android:padding="18dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        app:layout_constraintVertical_bias="0.19" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="114dp"
-        android:layout_height="59dp"
-        android:layout_marginStart="60dp"
-        android:text="@string/button2"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <Spinner
+        android:id="@+id/divisaActual"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textMonto"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toTopOf="@+id/button"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/textMonto"
+        app:layout_constraintTop_toTopOf="@+id/textMonto"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/textResult"
-        android:layout_width="wrap_content"
+        android:id="@+id/textConvert"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="124dp"
-        android:text="TextView"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
+        android:layout_marginTop="16dp"
+        android:padding="18dp"
+        android:text="Convertir en"
+        app:layout_constraintEnd_toEndOf="@+id/textMonto"
+        app:layout_constraintStart_toStartOf="@+id/textMonto"
+        app:layout_constraintTop_toBottomOf="@+id/textMonto" />
+
+    <Spinner
+        android:id="@+id/cambioDivisa"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textConvert"
+        app:layout_constraintEnd_toEndOf="@+id/divisaActual"
+        app:layout_constraintStart_toEndOf="@+id/textConvert"
+        app:layout_constraintTop_toTopOf="@+id/textConvert" />
+
+    <Button
+        android:id="@+id/btnConvert"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#0D47A1"
+        android:text="Conversión"
+        app:cornerRadius="0dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintStart_toStartOf="@+id/textConvert"
+        app:layout_constraintTop_toBottomOf="@+id/textConvert" />
+
+    <Button
+        android:id="@+id/btnClean"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#B71C1C"
+        android:text="Limpiar"
+        app:cornerRadius="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnConvert"
+        app:layout_constraintEnd_toEndOf="@+id/cambioDivisa"
+        app:layout_constraintStart_toEndOf="@+id/textConvert"
+        app:layout_constraintTop_toTopOf="@+id/btnConvert" />
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="357dp"
-        android:layout_height="36dp"
-        android:background="#105287"
-        android:text="Conversor de Divisas"
-        android:textAlignment="center"
-        android:textColor="#F3F0F0"
-        android:textSize="24sp"
-        android:textStyle="bold"
+        android:id="@+id/textResultado"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="0"
+        android:textColor="#00431C"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnClean"
+        app:layout_constraintStart_toStartOf="@+id/btnConvert"
+        app:layout_constraintTop_toTopOf="@+id/guideline4"
+        app:layout_constraintVertical_bias="0.19999999"
+        tools:textSize="60sp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="187dp"
+        android:layout_height="118dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="25dp"
-        tools:ignore="MissingConstraints" />
-
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/sharp_local_atm_24" />
 </androidx.constraintlayout.widget.ConstraintLayout>
